@@ -49,15 +49,15 @@ export default function Navbar() {
             About
           </Link>
           <Link 
-            href="/#projects" 
-            onClick={(e) => handleScroll(e, 'projects')}
+            href="/project-build" 
+            // onClick={(e) => handleScroll(e, 'projects')}
             className="hidden sm:inline-block text-gray-700 dark:text-gray-300 hover:text-blue-500 transition-colors"
           >
             Projects
           </Link>
           <Link 
-            href="/#contact" 
-            onClick={(e) => handleScroll(e, 'contact')}
+            href="/contact" 
+            // onClick={(e) => handleScroll(e, 'contact')}
             className="hidden sm:inline-block text-gray-700 dark:text-gray-300 hover:text-blue-500 transition-colors"
           >
             Contact
