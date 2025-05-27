@@ -3,6 +3,7 @@ import { FiArrowRight } from 'react-icons/fi';
 import { SiNextdotjs, SiTailwindcss, SiSpringboot, SiJavascript, SiTypescript, SiReact, SiAdobephotoshop } from 'react-icons/si';
 import { TbBrandReactNative } from 'react-icons/tb';
 import { FaGit,FaHtml5,FaCss3Alt } from "react-icons/fa6";
+import Experience from '../experience/page';
 
 
 export default function About() {
@@ -83,6 +84,10 @@ export default function About() {
             Contact Me
             <FiArrowRight className="ml-2" />
           </a>
+        </div>
+
+        <div>
+          <Experience/>
         </div>
       </div>
     </div>
