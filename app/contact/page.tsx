@@ -33,7 +33,7 @@ export default function Contact() {
 
     try {
       // Replace with your actual email service integration
-      const response = await fetch("http://localhost:3000/api/sendMail", {
+      const response = await fetch("https://theophilus-ak.vercel.app/api/sendMail", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
