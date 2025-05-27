@@ -1,11 +1,12 @@
 import Link from 'next/link';
 import { FiGithub, FiLinkedin, FiMail, FiArrowRight } from 'react-icons/fi';
+import Experience from './experience/page';
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 text-white">
       {/* Hero Section */}
-      <section className="max-w-6xl mx-auto px-6 py-32 flex flex-col items-center justify-center text-center">
+      <section className="max-w-6xl mx-auto px-6 py-20 flex flex-col items-center justify-center text-center">
         {/* Name + Title with Gradient Text */}
         <div className="mb-8 group">
           <h1 className="text-5xl md:text-7xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600 transition-all duration-500 group-hover:bg-gradient-to-l">
@@ -60,6 +61,10 @@ export default function Home() {
               <div className="w-1 h-2 bg-gray-400 rounded-full mt-2 animate-pulse" />
             </div>
           </div>
+        </div>
+
+        <div>
+          <Experience/>
         </div>
       </section>
     </main>

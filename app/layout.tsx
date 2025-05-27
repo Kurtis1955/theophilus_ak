@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/app/components/navbar';
+import Footer from './components/footer';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -23,6 +24,7 @@ export default function RootLayout({
         <main className="pt-20"> {/* Add padding to account for fixed navbar */}
           {children}
         </main>
+        <Footer />
       </body>
     </html>
   );

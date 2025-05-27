@@ -20,13 +20,16 @@ import Imperial2 from "../../public/images/imp2.png";
 
 const Projects_build = () => {
   return (
-    <div className="max-w-4xl mx-auto" id="projectspage">
-      <h1 id="services" className="text-center ">
+    <div
+      className="max-w-7xl mx-auto min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 py-16 px-4 sm:px-6 lg:px-8"
+      id="projectspage"
+    >
+      <h1 id="services" className="text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-600">
         Recent Projects
       </h1>
 
-      <div className="w-full grid gap-8 grid-cols-1 md:grid-cols-2">
-        <div className="w-full mb-6 border-[ #69fab4] shadow py-6 rounded-xl px-6 flex flex-col items-start justify-between ">
+      <div className="w-full mt-10 grid gap-8 grid-cols-1 md:grid-cols-2">
+        <div className="w-full mb-6 border border-[#f1f1f1] shadow py-6 rounded-xl px-6 flex flex-col items-start justify-between ">
           <div className="w-full mb-2 rounded-xl">
             <Swiper
               // breakpoints={{
@@ -95,7 +98,7 @@ const Projects_build = () => {
           </div>
         </div>
 
-        <div className="w-full mb-6  shadow py-6 rounded-xl px-6 flex flex-col items-start justify-between  ">
+        <div className="w-full mb-6 border border-[#f1f1f1] shadow py-6 rounded-xl px-6 flex flex-col items-start justify-start gap-6  ">
           <div className="w-full mb-2 rounded-xl">
             <Swiper
               spaceBetween={10}
@@ -149,7 +152,7 @@ const Projects_build = () => {
           </div>
         </div>
 
-        <div className="w-full mb-6  shadow py-6 rounded-xl px-6 flex flex-col items-start justify-between  ">
+        <div className="w-full mb-6 border border-[#f1f1f1] shadow py-6 rounded-xl px-6 flex flex-col items-start justify-between  ">
           <div className="w-full mb-2 rounded-xl">
             <Swiper
               spaceBetween={10}
@@ -184,7 +187,7 @@ const Projects_build = () => {
           </div>
           <div className="flex flex-col gap-2 text-sm">
             <h4>Type: Web Application</h4>
-            <h4>Technologies: Nextjs,SASS,vercel</h4>
+            <h4>Technologies: Nextjs, Tailwind CSS, SASS, vercel</h4>
             <Link
               href={"https://www.360botech.com/"}
               className="text-amber-500"
@@ -207,7 +210,7 @@ const Projects_build = () => {
           </div>
         </div>
 
-        <div className="w-full mb-6  shadow py-6 rounded-xl px-6 flex flex-col items-start justify-between  ">
+        <div className="w-full mb-6 border border-[#f1f1f1] shadow py-6 rounded-xl px-6 flex flex-col items-start justify-between  ">
           <div className="w-full mb-2 rounded-xl">
             <Swiper
               spaceBetween={10}
@@ -259,7 +262,7 @@ const Projects_build = () => {
           </div>
         </div>
 
-        <div className="w-full mb-6  shadow py-6 rounded-xl px-6 flex flex-col items-start justify-between  ">
+        <div className="w-full mb-6 border border-[#f1f1f1] shadow py-6 rounded-xl px-6 flex flex-col items-start justify-between  ">
           <div className="w-full mb-2 rounded-xl">
             <Swiper
               spaceBetween={10}
@@ -293,8 +296,8 @@ const Projects_build = () => {
             </Swiper>
           </div>
           <div className="flex flex-col gap-2 text-sm">
-            <h4>Type: Desktop Application</h4>
-            <h4>Technologies: Next.js, Tailwind CSS, Rust,tauri</h4>
+            <h4>Type: Web Application</h4>
+            <h4>Technologies: Nextjs, Tailwind CSS, SASS, vercel</h4>
             <div>
               Developing the website for Becoming Creation Limited was a
               rewarding and transformative experience. I deepened my expertise
@@ -311,7 +314,7 @@ const Projects_build = () => {
           </div>
         </div>
 
-        <div className="w-full mb-6  shadow py-6 rounded-xl px-6 flex flex-col items-start justify-between  ">
+        <div className="w-full mb-6 border border-[#f1f1f1] shadow py-6 rounded-xl px-6 flex flex-col items-start justify-between  ">
           <div className="w-full mb-2 rounded-xl">
             <Swiper
               spaceBetween={10}
@@ -326,18 +329,27 @@ const Projects_build = () => {
             >
               <SwiperSlide>
                 <div className="w-full">
-                  <Image
-                    src={Akey1}
-                    alt="Imperial Image 1"
+                  <img
+                    src="/images/ESS_1.png"
+                    alt="Ess Image 1"
                     className="rounded-xl"
                   />
                 </div>
               </SwiperSlide>
               <SwiperSlide>
                 <div className="w-full">
-                  <Image
-                    src={Akey2}
-                    alt="Imperial Image 1"
+                  <img
+                    src="/images/ESS_2.png"
+                    alt="Ess Image 2"
+                    className="rounded-xl"
+                  />
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className="w-full">
+                  <img
+                    src="/images/ESS_3.png"
+                    alt="Ess Image 3"
                     className="rounded-xl"
                   />
                 </div>
@@ -345,19 +357,18 @@ const Projects_build = () => {
             </Swiper>
           </div>
           <div className="flex flex-col gap-2 text-sm">
-            <h4>Type: Desktop Application</h4>
-            <h4>Technologies: Next.js, Tailwind CSS, Rust,tauri</h4>
+            <h4>Type: Web Application</h4>
+            <h4>Technologies: Nextjs, Tailwind CSS</h4>
             <div>
-              Working on Becoming Care Services marked a significant milestone
-              as my first industry project. It was an invaluable learning
-              experience that refined my skills in Next.js, Sass, and Vercel,
-              allowing me to create a seamless and intuitive user interface
-              while meeting project deadlines with precision. Collaborating with
-              the team and clients strengthened my communication and teamwork
-              abilities, while tackling technical challenges sharpened my
-              problem-solving skills. This project not only elevated my
-              expertise but also instilled a deep sense of purpose in building
-              impactful digital solutions, especially in the healthcare sector.
+              Developing the Employee Self-Service (ESS) website for SuperTech
+              was a great learning experience. The system allows employees to
+              apply for leave and loans, while managers can easily approve or
+              reject requests. I worked on features like user and role setup for
+              the admin, leave and loan tracking dashboards, and an interactive
+              calendar for holidays and scheduled leaves. This project helped me
+              improve my frontend and backend development skills, and gave me
+              hands-on experience building a practical, user-friendly system
+              used in a real company.
             </div>
           </div>
         </div>
