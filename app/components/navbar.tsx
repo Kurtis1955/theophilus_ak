@@ -2,6 +2,7 @@
 'use client';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
+import { FaWhatsapp } from 'react-icons/fa';
 import { FiCode, FiGithub, FiLinkedin, FiMail, FiUser } from 'react-icons/fi';
 import { IoMenu } from "react-icons/io5";
 import { RiHomeHeartFill } from 'react-icons/ri';
@@ -45,11 +46,11 @@ export default function Navbar() {
           </Link>
           
           <div className="flex gap-4 ml-4">
-            <a href="https://github.com/yourusername" target="_blank" className="text-gray-700 dark:text-gray-300 hover:text-blue-500 transition-colors">
+            <a href="https://github.com/Kurtis1955" target="_blank" className="text-gray-700 dark:text-gray-300 hover:text-blue-500 transition-colors">
               <FiGithub className="text-xl" />
             </a>
-            <a href="https://linkedin.com/in/yourusername" target="_blank" className="text-gray-700 dark:text-gray-300 hover:text-blue-500 transition-colors">
-              <FiLinkedin className="text-xl" />
+            <a href="https://wa.me/233506450690" target="_blank" className="text-gray-700 dark:text-gray-300 hover:text-blue-500 transition-colors">
+              <FaWhatsapp className="text-xl" />
             </a>
           </div>
 
