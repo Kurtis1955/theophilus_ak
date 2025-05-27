@@ -16,7 +16,7 @@
 
 #services::before {
   content: "Projects";
-  -webkit-text-stroke: 2px yellow;
+  -webkit-text-stroke: 2px whitesmoke;
 
   font-size: 1.7em !important;
   position: absolute;
