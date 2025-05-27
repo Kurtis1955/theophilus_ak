@@ -119,7 +119,7 @@ export default function Footer() {
                   href="mailto:hello@example.com"
                   className="text-gray-400 hover:text-blue-400 transition-colors"
                 >
-                  hello@example.com
+                  kurtisbill2001@gmail.com
                 </a>
               </li>
               <li className="flex items-start">
