@@ -321,8 +321,8 @@ const Projects_build = () => {
               slidesPerView={1}
               freeMode={true}
               autoplay={{
-                delay: 6000, // 3 seconds delay
-                disableOnInteraction: false, // Keeps autoplay even when user interacts
+                delay: 6000, 
+                disableOnInteraction: false,
               }}
               pagination={{ clickable: true }}
               modules={[FreeMode, Pagination, Autoplay]}
@@ -336,7 +336,7 @@ const Projects_build = () => {
                   />
                 </div>
               </SwiperSlide>
-              <SwiperSlide>
+              {/* <SwiperSlide>
                 <div className="w-full">
                   <img
                     src="/images/ESS_2.png"
@@ -353,7 +353,7 @@ const Projects_build = () => {
                     className="rounded-xl"
                   />
                 </div>
-              </SwiperSlide>
+              </SwiperSlide> */}
             </Swiper>
           </div>
           <div className="flex flex-col gap-2 text-sm">

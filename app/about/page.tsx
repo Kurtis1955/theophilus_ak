@@ -1,7 +1,7 @@
-import { FaReact, FaFigma, FaJava, FaNodeJs } from 'react-icons/fa';
+import {FaFigma, FaJava, FaNodeJs } from 'react-icons/fa';
 import { FiArrowRight } from 'react-icons/fi';
-import { SiNextdotjs, SiTailwindcss, SiSpringboot, SiJavascript, SiTypescript, SiReact, SiAdobephotoshop } from 'react-icons/si';
-import { TbBrandReactNative } from 'react-icons/tb';
+import { SiNextdotjs, SiTailwindcss, SiBlazor , SiJavascript, SiTypescript, SiReact, SiAdobephotoshop } from 'react-icons/si';
+import { TbBrandCSharp  } from 'react-icons/tb';
 import { FaGit,FaHtml5,FaCss3Alt } from "react-icons/fa6";
 import Experience from '../experience/page';
 
@@ -10,11 +10,11 @@ export default function About() {
   const skills = [
     { name: 'JavaScript', icon: <SiJavascript className="text-yellow-400" /> },
     { name: 'TypeScript', icon: <SiTypescript className="text-blue-500" /> },
-    { name: 'React', icon: <SiReact className="text-blue-400" /> },
-    { name: 'Next.js', icon: <SiNextdotjs className="text-black dark:text-white" /> },
+    { name: 'React Next.js', icon: <SiNextdotjs className="text-black dark:text-white" /> },
     { name: 'Tailwind CSS', icon: <SiTailwindcss className="text-cyan-400" /> },
-    { name: 'React Native', icon: <TbBrandReactNative className="text-sky-600" /> },
     { name: 'Node.js', icon: <FaNodeJs className="text-green-600" /> },
+    { name: 'C#', icon: <TbBrandCSharp  className="text-sky-600" /> },
+    { name: 'Blazor', icon: <SiBlazor className="text-blue-400" /> },
     { name: 'Html5', icon: <FaHtml5 className="text-red-500" /> },
     { name: 'CSS', icon: <FaCss3Alt className="text-green-500" /> },
     { name: 'Figma', icon: <FaFigma className="text-purple-500" /> },

@@ -43,16 +43,16 @@ const experiences = [
   },
   {
     year: "2024",
-    role: "Frontend Developer (National Service)",
+    role: "Software & UI/UX Developer  ",
     company: "SuperTech Limited",
     icon: <FiBriefcase className="text-orange-500" />,
     highlights: [
-      "Built modern web apps with React/Next.js",
+      "Built modern web apps with React/Next.js and C#/Blazor",
       "Designed UI architectures balancing aesthetics/functionality",
       "Collaborated with backend teams on API integrations",
       "Expanding into backend development with Java"
     ],
-    tech: ["React", "Next.js", "Sass", "Java"]
+    tech: ["React", "Next.js", "Sass", "Java" , "C#", "Blazor"]
   }
 ];
 

@@ -20,7 +20,7 @@ export default function Footer() {
               Akowuah
             </h3>
             <p className="text-gray-400">
-              SOftware developer specializing in modern web and mobile
+              Software developer specializing in modern web and mobile
               applications
             </p>
             <div className="flex space-x-4">
@@ -61,7 +61,7 @@ export default function Footer() {
                 <FiTwitter className="h-6 w-6" />
               </a>
               <a
-                href="mailto:kurtisbill2001@gmail.com"
+                href="mailto:kurtisbill2000@gmail.com"
                 className="text-gray-400 hover:text-white transition-colors"
                 aria-label="Email"
               >
@@ -119,7 +119,7 @@ export default function Footer() {
                   href="mailto:hello@example.com"
                   className="text-gray-400 hover:text-blue-400 transition-colors"
                 >
-                  kurtisbill2001@gmail.com
+                  kurtisbill2000@gmail.com
                 </a>
               </li>
               <li className="flex items-start">
