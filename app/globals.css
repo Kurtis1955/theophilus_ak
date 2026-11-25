@@ -1,48 +1,87 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #f6f5f2;
+  --surface: #ffffff;
+  --surface-2: #efede7;
+  --line: #e3e0d8;
+  --ink: #181712;
+  --muted: #5b574d;
+  --faint: #8b867a;
+  --accent: #0d7a6f;
+  --accent-strong: #0a5f56;
+  --accent-soft: rgba(13, 122, 111, 0.08);
+  --accent-line: rgba(13, 122, 111, 0.35);
 }
 
-#services {
-  position: relative;
-  font-weight: 700;
-  font-size: 2.5em;
-
-  font-family: Poppins-SemiBold;
-  margin-bottom: 0.2em;
+.dark {
+  --bg: #0b0d0f;
+  --surface: #121518;
+  --surface-2: #181d22;
+  --line: #232a31;
+  --ink: #e9ebee;
+  --muted: #9aa4ae;
+  --faint: #66707b;
+  --accent: #2dd4bf;
+  --accent-strong: #5eead4;
+  --accent-soft: rgba(45, 212, 191, 0.09);
+  --accent-line: rgba(45, 212, 191, 0.35);
 }
 
-#services::before {
-  content: "Projects";
-  -webkit-text-stroke: 2px whitesmoke;
-
-  font-size: 1.7em !important;
-  position: absolute;
-
-  bottom: 0px;
-  -webkit-text-fill-color: transparent;
-  opacity: 0.1;
- z-index:42;
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-line: var(--line);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-faint: var(--faint);
+  --color-accent: var(--accent);
+  --color-accent-strong: var(--accent-strong);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-line: var(--accent-line);
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-space-grotesk), var(--font-inter), sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
 }
 
-/* @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-} */
+html {
+  scroll-behavior: smooth;
+}
 
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-} */
+body {
+  background-color: var(--bg);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
 
-/* body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-} */
+::selection {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+/* Subtle engineering blueprint grid used behind hero/sections */
+.bg-blueprint {
+  background-image:
+    linear-gradient(to right, color-mix(in srgb, var(--ink) 4%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in srgb, var(--ink) 4%, transparent) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+/* Fine dot grid for cards */
+.bg-dots {
+  background-image: radial-gradient(color-mix(in srgb, var(--ink) 10%, transparent) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+
+/* Thin scrollbar for galleries */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
