@@ -1,95 +1,178 @@
-import {FaFigma, FaJava, FaNodeJs } from 'react-icons/fa';
-import { FiArrowRight } from 'react-icons/fi';
-import { SiNextdotjs, SiTailwindcss, SiBlazor , SiJavascript, SiTypescript, SiReact, SiAdobephotoshop } from 'react-icons/si';
-import { TbBrandCSharp  } from 'react-icons/tb';
-import { FaGit,FaHtml5,FaCss3Alt } from "react-icons/fa6";
-import Experience from '../experience/page';
+import type { Metadata } from "next";
+import Link from "next/link";
+import { FiArrowRight } from "react-icons/fi";
+import SectionHeading from "../components/section-heading";
+import ExperienceTimeline from "../components/experience-timeline";
+import { experiences, skillCategories } from "../lib/experience";
+import { site } from "../lib/site";
 
+export const metadata: Metadata = {
+  title: "About",
+  description: `${site.name} is a Frontend Engineer with 3+ years of experience building React and Next.js applications, enterprise dashboards and business systems.`,
+};
+
+const approach = [
+  {
+    title: "Understand the business first",
+    body: "Most of my work is business software. I start from the workflow — who uses it, what decision it supports, what happens when it fails — before touching components.",
+  },
+  {
+    title: "Engineer for the maintainer",
+    body: "Reusable components, typed data models and predictable state. Code I leave behind should be cheaper to extend than it was to write.",
+  },
+  {
+    title: "Integrate, don't isolate",
+    body: "Frontend rarely exists alone. I design API boundaries deliberately — typed contracts, clear error states, and UIs that degrade gracefully when services do.",
+  },
+  {
+    title: "Verify in the real world",
+    body: "Responsive behaviour, permission edge cases and messy data are tested against actual usage, not just the happy path.",
+  },
+];
+
+const credentials = [
+  { label: "BSc Computer Science", note: "University degree" },
+  { label: "2× Hackathon winner", note: "Competitive builds" },
+  { label: "3+ years", note: "Professional experience" },
+];
 
 export default function About() {
-  const skills = [
-    { name: 'JavaScript', icon: <SiJavascript className="text-yellow-400" /> },
-    { name: 'TypeScript', icon: <SiTypescript className="text-blue-500" /> },
-    { name: 'React Next.js', icon: <SiNextdotjs className="text-black dark:text-white" /> },
-    { name: 'Tailwind CSS', icon: <SiTailwindcss className="text-cyan-400" /> },
-    { name: 'Node.js', icon: <FaNodeJs className="text-green-600" /> },
-    { name: 'C#', icon: <TbBrandCSharp  className="text-sky-600" /> },
-    { name: 'Blazor', icon: <SiBlazor className="text-blue-400" /> },
-    { name: 'Html5', icon: <FaHtml5 className="text-red-500" /> },
-    { name: 'CSS', icon: <FaCss3Alt className="text-green-500" /> },
-    { name: 'Figma', icon: <FaFigma className="text-purple-500" /> },
-    { name: 'Git', icon: <FaGit className="text-blue-700" /> },
-    { name: 'UI/UX Design', icon: <FaFigma className="text-pink-500" /> }
-  ];
-
   return (
-    <div id='about' className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto">
-        {/* About Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl font-extrabold text-gray-900 dark:text-white mb-4">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-600">
-              THEOPHILUS AKOWUAH
-            </span>
-          </h1>
-          <h2 className="text-2xl font-semibold text-gray-600 dark:text-gray-300">Frontend Developer</h2>
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
+      {/* Header */}
+      <header className="max-w-3xl">
+        <p className="font-mono text-xs sm:text-sm text-accent tracking-widest uppercase">
+          {"//"} about
+        </p>
+        <h1 className="mt-4 font-display text-4xl sm:text-5xl font-bold tracking-tight text-ink">
+          Engineer first, <span className="text-accent">developer</span> always.
+        </h1>
+        <div className="mt-6 space-y-4 text-muted leading-relaxed">
+          <p>
+            I&apos;m {site.name.split(" ")[0]}, a frontend engineer with over three
+            years of experience building web applications that solve real business
+            problems. My work sits at the intersection of interface design and
+            systems engineering — turning complex requirements into interfaces
+            that are reliable, maintainable and genuinely usable.
+          </p>
+          <p>
+            Most of what I&apos;ve shipped is business software: employee
+            self-service platforms, ERP-integrated quotation systems, biometric
+            attendance management, aviation certification tools and
+            gold-trading platforms. These aren&apos;t brochure sites — they&apos;re
+            systems people depend on daily, which shapes how I think about state,
+            permissions, error handling and data integrity.
+          </p>
+          <p>
+            While my primary depth is the frontend — React, Next.js, TypeScript
+            and Tailwind — I work comfortably across the stack. I&apos;ve built with
+            Java and Spring Boot, C# with Blazor, PHP backend services, and
+            Node.js, which means I design frontend/backend boundaries with an
+            understanding of what the other side actually looks like.
+          </p>
+          <p>
+            I hold a bachelor&apos;s degree in Computer Science and have won two
+            hackathons. I care about craft — clean architecture, honest code
+            review, accessible interfaces — and I&apos;m continuously expanding into
+            deeper backend and systems work.
+          </p>
         </div>
 
-        {/* About Content */}
-        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 mb-16">
-          <p className="text-md lg:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-            Dynamic Frontend Developer with a proven track record in building user-centric, visually stunning web applications. 
-            Proficient in JavaScript, React.js, Next.js, and SASS, with expertise in Tailwind CSS for modern, responsive designs. 
-            Skilled in UI/UX design using Figma, Penpot and professional graphics design with Photoshop. 
-            Experienced in cross-platform mobile development with React Native, and expanding backend knowledge with Java and Spring Boot framework.
-          </p>
-          <div className="mt-6">
-            <p className="text-md lg:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-              A two-time hackathon winner holding a bachelor's degree in computer science, I thrive under pressure and excel in collaborative environments, 
-              driving innovation in fast-paced teams. Passionate about self-improvement, leadership, and mentoring, with a deep appreciation for 
-              self-development books and a genuine love for inspiring young minds.
+        <div className="mt-8 grid grid-cols-3 gap-3 max-w-lg">
+          {credentials.map((c) => (
+            <div
+              key={c.label}
+              className="rounded-lg border border-line bg-surface px-4 py-3 text-center"
+            >
+              <p className="text-sm font-semibold text-ink">{c.label}</p>
+              <p className="mt-0.5 text-[11px] text-faint">{c.note}</p>
+            </div>
+          ))}
+        </div>
+      </header>
+
+      {/* Approach */}
+      <section className="mt-20">
+        <SectionHeading
+          eyebrow="how I work"
+          title="My engineering approach"
+        />
+        <div className="mt-8 grid sm:grid-cols-2 gap-4">
+          {approach.map((a, i) => (
+            <div
+              key={a.title}
+              className="rounded-xl border border-line bg-surface p-6"
+            >
+              <p className="font-mono text-xs text-faint">
+                {String(i + 1).padStart(2, "0")}
+              </p>
+              <h3 className="mt-2 font-display font-bold text-ink">{a.title}</h3>
+              <p className="mt-2 text-sm text-muted leading-relaxed">{a.body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Skills */}
+      <section className="mt-20">
+        <SectionHeading
+          eyebrow="technical skills"
+          title="Tools I engineer with"
+          description="Organised by how they apply to real work — not as a logo wall."
+        />
+        <div className="mt-8 grid sm:grid-cols-2 gap-4">
+          {skillCategories.map((cat) => (
+            <div
+              key={cat.title}
+              className="rounded-xl border border-line bg-surface p-6"
+            >
+              <h3 className="font-display font-bold text-ink">{cat.title}</h3>
+              <p className="mt-1 text-xs text-faint">{cat.description}</p>
+              <ul className="mt-4 space-y-2.5">
+                {cat.skills.map((s) => (
+                  <li key={s.name} className="flex items-baseline justify-between gap-3 text-sm">
+                    <span className="font-medium text-ink">{s.name}</span>
+                    {s.note && <span className="text-xs text-faint text-right">{s.note}</span>}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Experience */}
+      <section className="mt-20">
+        <SectionHeading
+          eyebrow="experience"
+          title="Where I've worked"
+          description="A progression from internship to shipping business-critical systems."
+        />
+        <div className="mt-8 max-w-3xl">
+          <ExperienceTimeline items={experiences} />
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="mt-20">
+        <div className="rounded-xl border border-line bg-surface p-8 sm:p-10 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+          <div>
+            <h2 className="font-display text-2xl font-bold text-ink">
+              Want to see what I&apos;ve built?
+            </h2>
+            <p className="mt-2 text-sm text-muted">
+              Case studies cover the architecture, challenges and engineering
+              decisions behind each project.
             </p>
           </div>
-        </div>
-
-        {/* Skills Section */}
-        <div className="mb-16">
-          <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-12">
-            <span className="border-b-4 border-blue-500 pb-2">Technical Skills</span>
-          </h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-            {skills.map((skill, index) => (
-              <div 
-                key={index}
-                className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 flex flex-col items-center justify-center hover:shadow-xl transition-shadow duration-300 hover:-translate-y-1 transform transition"
-              >
-                <div className="text-4xl mb-3">
-                  {skill.icon}
-                </div>
-                <h3 className="text-lg font-medium text-gray-900 dark:text-white text-center">
-                  {skill.name}
-                </h3>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Contact CTA */}
-        <div className="text-center">
-          <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">Ready to collaborate?</h2>
-          <a 
-            href="/contact" 
-            className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 transition-all"
+          <Link
+            href="/projects"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-accent text-bg font-semibold hover:bg-accent-strong transition-colors shrink-0"
           >
-            Contact Me
-            <FiArrowRight className="ml-2" />
-          </a>
+            Browse projects <FiArrowRight className="w-4 h-4" />
+          </Link>
         </div>
-
-        <div>
-          <Experience/>
-        </div>
-      </div>
+      </section>
     </div>
   );
 }
