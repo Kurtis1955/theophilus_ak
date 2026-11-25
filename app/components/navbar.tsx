@@ -1,102 +1,99 @@
-// components/Navbar.tsx
-'use client';
-import Link from 'next/link';
-import { useState, useEffect } from 'react';
-import { FaWhatsapp } from 'react-icons/fa';
-import { FiCode, FiGithub, FiLinkedin, FiMail, FiUser } from 'react-icons/fi';
-import { IoMenu } from "react-icons/io5";
-import { RiHomeHeartFill } from 'react-icons/ri';
+"use client";
 
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
+import { FiGithub, FiLinkedin, FiMenu, FiX } from "react-icons/fi";
+import { navLinks, site } from "@/app/lib/site";
+import ThemeToggle from "./theme-toggle";
 
 export default function Navbar() {
+  const [open, setOpen] = useState(false);
+  const pathname = usePathname();
 
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
-        const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
-      }
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   return (
-    <nav className='fixed top-0 w-full z-50 transition-all duration-300 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm shadow-sm' >
-      <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-        <Link 
-          href="/" 
-          className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-600"
+    <header className="fixed top-0 inset-x-0 z-50 border-b border-line bg-bg/85 backdrop-blur-md">
+      <nav className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+        <Link
+          href="/"
+          className="font-display font-bold text-lg tracking-tight text-ink"
+          onClick={() => setOpen(false)}
         >
-          THEOPHILUS
+          theophilus<span className="text-accent">.</span>ak
         </Link>
-        
-        <div className="flex items-center gap-6">
-          <Link 
-            href="/about" 
-            className="hidden sm:inline-block text-gray-700 dark:text-gray-300 hover:text-blue-500 transition-colors"
-          >
-            About
-          </Link>
-          <Link 
-            href="/project-build" 
-            className="hidden sm:inline-block text-gray-700 dark:text-gray-300 hover:text-blue-500 transition-colors"
-          >
-            Projects
-          </Link>
-          <Link 
-            href="/contact" 
-            className="hidden sm:inline-block text-gray-700 dark:text-gray-300 hover:text-blue-500 transition-colors"
-          >
-            Contact
-          </Link>
-          
-          <div className="flex gap-4 ml-4">
-            <a href="https://github.com/Kurtis1955" target="_blank" className="text-gray-700 dark:text-gray-300 hover:text-blue-500 transition-colors">
-              <FiGithub className="text-xl" />
-            </a>
-            <a href="https://wa.me/233506450690" target="_blank" className="text-gray-700 dark:text-gray-300 hover:text-blue-500 transition-colors">
-              <FaWhatsapp className="text-xl" />
-            </a>
-          </div>
 
-        <IoMenu size={25} className="sm:hidden" onClick={toggleMenu} />
-
-        {isMenuOpen && (
-  <ul className="lg:hidden w-full absolute top-13 left-0 flex flex-col h-screen z-[99] bg-white dark:bg-gray-800 transition-all duration-300 ease-in-out p-4 space-y-1">
-    <Link 
-      href="/" 
-      onClick={() => setIsMenuOpen(false)}
-      className="flex items-center gap-4 px-2 py-3 text-gray-900 dark:text-gray-300 hover:bg-blue-500 hover:text-white hover:rounded-lg transition-colors duration-200 border-b dark:border-gray-700"
-    >
-      <RiHomeHeartFill size={25} />
-      <span>Home</span>
-    </Link>
-
-    <Link 
-      href="/about" 
-      onClick={() => setIsMenuOpen(false)}
-      className="flex items-center gap-4 px-2 py-3 text-gray-900 dark:text-gray-300 hover:bg-blue-500 hover:text-white hover:rounded-lg transition-colors duration-200 border-b dark:border-gray-700"
-    >
-      <FiUser size={25} />
-      <span>About</span>
-    </Link>
-
-    <Link 
-      href="/project-build" 
-      onClick={() => setIsMenuOpen(false)}
-      className="flex items-center gap-4 px-2 py-3 text-gray-900 dark:text-gray-300 hover:bg-blue-500 hover:text-white hover:rounded-lg transition-colors duration-200 border-b dark:border-gray-700"
-    >
-      <FiCode size={25} />
-      <span>Projects</span>
-    </Link>
-
-    <Link 
-      href="/contact" 
-      onClick={() => setIsMenuOpen(false)}
-      className="flex items-center gap-4 px-2 py-3 text-gray-900 dark:text-gray-300 hover:bg-blue-500 hover:text-white hover:rounded-lg transition-colors duration-200 border-b dark:border-gray-700"
-    >
-      <FiMail size={25} />
-      <span>Contact</span>
-    </Link>
-  </ul>
-)}
+        <div className="hidden md:flex items-center gap-1">
+          {navLinks.map((l) => (
+            <Link
+              key={l.href}
+              href={l.href}
+              className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                isActive(l.href)
+                  ? "text-accent bg-accent-soft"
+                  : "text-muted hover:text-ink hover:bg-surface-2"
+              }`}
+            >
+              {l.label}
+            </Link>
+          ))}
         </div>
-      </div>
-    </nav>
+
+        <div className="flex items-center gap-1">
+          <a
+            href={site.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub profile"
+            className="p-2 rounded-md text-muted hover:text-accent hover:bg-accent-soft transition-colors"
+          >
+            <FiGithub className="w-5 h-5" />
+          </a>
+          <a
+            href={site.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn profile"
+            className="p-2 rounded-md text-muted hover:text-accent hover:bg-accent-soft transition-colors"
+          >
+            <FiLinkedin className="w-5 h-5" />
+          </a>
+          <ThemeToggle />
+          <button
+            type="button"
+            onClick={() => setOpen((v) => !v)}
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+            className="md:hidden p-2 rounded-md text-muted hover:text-ink hover:bg-surface-2 transition-colors"
+          >
+            {open ? <FiX className="w-5 h-5" /> : <FiMenu className="w-5 h-5" />}
+          </button>
+        </div>
+      </nav>
+
+      {open && (
+        <div className="md:hidden border-t border-line bg-bg">
+          <ul className="px-4 py-3 space-y-1">
+            {navLinks.map((l) => (
+              <li key={l.href}>
+                <Link
+                  href={l.href}
+                  onClick={() => setOpen(false)}
+                  className={`block px-3 py-2.5 rounded-md text-sm font-medium transition-colors ${
+                    isActive(l.href)
+                      ? "text-accent bg-accent-soft"
+                      : "text-muted hover:text-ink hover:bg-surface-2"
+                  }`}
+                >
+                  {l.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </header>
   );
 }
